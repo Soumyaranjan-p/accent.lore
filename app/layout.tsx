@@ -12,8 +12,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Your App Name",
-  description: "Your app description",
+  title: "Accent Lore",
+  description: "Accent lore is a collection of stories, myths, and legends that explore the origins and meanings of various accents from around the world. It delves into the cultural, historical, and linguistic aspects of accents, providing insights into how they have evolved and what they signify in different societies.",
 };
 
 export default function RootLayout({
