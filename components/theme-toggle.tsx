@@ -1,18 +1,18 @@
 "use client";
 
 import { useTheme } from "next-themes";
-
+import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
 import { SunMoonIcon } from "@/themes/moon";
 import { SunDimIcon } from "@/themes/sun";
 
-
-
-
 function ThemeToggle({ className }: { className?: string }) {
-  const { setTheme, resolvedTheme, theme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-  const isDark = (resolvedTheme ?? theme) === "dark";
+  useEffect(() => setMounted(true), []);
+
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button
@@ -22,8 +22,10 @@ function ThemeToggle({ className }: { className?: string }) {
         className
       )}
     >
-      {isDark ? (
-        <SunMoonIcon/>
+      {!mounted ? (
+        <div className="w-7 h-7" /> 
+      ) : isDark ? (
+        <SunMoonIcon />
       ) : (
         <SunDimIcon />
       )}
