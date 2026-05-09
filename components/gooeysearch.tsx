@@ -75,6 +75,26 @@ export default function Gooeyfilter() {
       </svg>
     );
   };
+  const searchRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+  function handleClickOutside(event: MouseEvent) {
+    if (
+      searchRef.current &&
+      !searchRef.current.contains(event.target as Node)
+    ) {
+      setIsExpanded(false);
+    }
+  }
+
+  document.addEventListener("mousedown", handleClickOutside);
+
+  return () => {
+    document.removeEventListener(
+      "mousedown",
+      handleClickOutside
+    );
+  };
+}, []);
 
   useEffect(() => {
     if (isExpanded) {
@@ -85,7 +105,7 @@ export default function Gooeyfilter() {
   }, [isExpanded]);
 
   return (
-    <div className="relative">
+    <div ref={searchRef} className="relative">
       <SVGFilter />
 
       <div
