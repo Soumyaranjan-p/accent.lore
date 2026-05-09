@@ -1,5 +1,6 @@
 "use client";
-
+import Link from "next/link";
+import words from "../data/words.json";
 import { motion, SVGMotionProps } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
@@ -116,10 +117,55 @@ export default function Gooeyfilter() {
   dark:text-white
 "
           >
-            {!isExpanded && (
-              <SearchIcon className="size-4 text-black dark:text-white" />
-            )}
+            {isExpanded && searchText.length > 0 && (
+  <div
+    className="
+      absolute top-14 z-50 w-full overflow-hidden
+      rounded-3xl border border-black/10
+      bg-white shadow-2xl
+      dark:border-white/10
+      dark:bg-zinc-900
+    "
+  >
+    {words
+      .filter((item) =>
+        item.word.toLowerCase().includes(searchText.toLowerCase())
+      )
+      .slice(0, 6)
+      .map((item) => (
+        <Link
+          key={item.slug}
+          href={`/word/${item.slug}`}
+          className="
+            flex items-center justify-between
+            border-b border-black/5 px-5 py-4
+            transition hover:bg-black/5
+            dark:border-white/5
+            dark:hover:bg-white/5
+          "
+        >
+          <div>
+            <p className="font-medium">{item.word}</p>
 
+            <p className="text-sm text-black/50 dark:text-white/50">
+              {item.language}
+            </p>
+          </div>
+
+          <span
+            className="
+              rounded-full bg-orange-100 px-3 py-1
+              text-xs text-orange-600
+              dark:bg-orange-500/10
+              dark:text-orange-400
+            "
+          >
+            {item.meaning}
+          </span>
+        </Link>
+      ))}
+  </div>
+)}
             <motion.input
               layoutId="input"
               ref={inputref}

@@ -9,18 +9,7 @@ export default function LandingPage() {
            
             <nav className="flex items-center  justify-between relative z-20 ">
               <div className="flex items-center gap-8">
-                <h2 className="tracking-tighter  bg-clip-text text-transparent  bg-gradient-to-b from-blue-400  to-blue-800 text-lg font-bold text-shadow-lg   px-4"> 
-                 Accent.lore
-                </h2>
-                <a href="#" className="text-neutral-700 text-xs">
-                  Features
-                </a>
-                <a href="#" className="text-neutral-700 text-xs">
-                  Pricing
-                </a>
-                <a href="#" className="text-neutral-700 text-xs">
-                  Changelog
-                </a>
+                
               </div>
               <div className="flex items-center gap-2">
                 <button className="px-4 py-2  rounded-md bg-gradient-to-t text-neutral-700 text-shadow-lg text-shadow-black/2 text-black text-xs ">
