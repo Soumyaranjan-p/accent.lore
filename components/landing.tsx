@@ -1,4 +1,4 @@
-import { cn } from "../lib/utils";
+
 export default function LandingPage() {
   return (
     <section className="relative  h-screen w-full overflow-hidden ">

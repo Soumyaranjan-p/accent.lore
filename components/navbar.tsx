@@ -9,18 +9,19 @@ const navItems = [
     label: "Explore",
     href: "/explore",
   },
+  // {
+  //   label: "Trending",
+  //   href: "/trending",
+  // },
   {
-    label: "Trending",
-    href: "/trending",
+    label: "Create Slang",
+    href: "/createslang",
   },
   {
     label: "About",
     href: "/about",
   },
-  {
-    label: "Create Slang",
-    href: "/createslang",
-  },
+  
 ];
 
 function Navbar() {
@@ -29,7 +30,7 @@ function Navbar() {
       <div className="flex items-start gap-20 translate-x-40">
         
         {/* Logo + Nav Links */}
-        <div className="flex items-start gap-6">
+        <div className="flex items-start gap-18">
           <Image
             className="size-10"
             src="/logo.png"
