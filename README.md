@@ -1,2 +1,2 @@
 
-Coming Soon!!!!!
+https://accent-lore.vercel.app/
