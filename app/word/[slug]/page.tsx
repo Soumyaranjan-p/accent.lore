@@ -8,7 +8,7 @@ export default async function WordPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-
+await new Promise((r) => setTimeout(r, 300))
   const word = words.find(
     (item) => item.slug.toLowerCase() === slug.toLowerCase()
   );

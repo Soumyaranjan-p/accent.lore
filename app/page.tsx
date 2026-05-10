@@ -1,10 +1,10 @@
-import LandingPage from "@/components/landing";
-import { Navbar } from "@/components/navbar";
+import TrendingNowSection from "@/components/landing";
+
 
 
 
 export default function Home() {
   return (
-    <div></div>
+    <TrendingNowSection />
   );
 }

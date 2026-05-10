@@ -27,7 +27,7 @@ function Navbar() {
       ">
 
         {/* LOGO */}
-        <Link href="/" className="flex items-center shrink-0">
+        <Link href="/" className="flex items-center shrink-0 ml-16">
           <span
             className="font-black text-[20px] tracking-[-1px] text-[#1A1614] dark:text-[#F5F0E8]"
             style={{ fontFamily: "'Syne', sans-serif" }}
@@ -64,7 +64,7 @@ function Navbar() {
         </nav>
 
         {/* RIGHT: SEARCH + THEME */}
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-2 shrink-0 mr-10">
           <Gooeyfilter />
           <ThemeToggle />
         </div>
